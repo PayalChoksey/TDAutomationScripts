@@ -37,7 +37,7 @@ public class TDWeb_002 extends TDWeb_001{
 	{	
 		report = new ExtentReports(
 				"/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/Reports/automationreport.html", true);
-		
+		driver.get(NewManageUser.getProperty("URLNewMUser"));
 		NewManageUser= new Properties();
 		FileInputStream newmuser =new FileInputStream(System.getProperty("user.dir")+"//src//test//resources//Source//NewManagerUser.properties");
 		NewManageUser.load(newmuser);

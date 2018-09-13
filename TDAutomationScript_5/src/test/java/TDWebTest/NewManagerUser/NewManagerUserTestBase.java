@@ -20,16 +20,17 @@ public class NewManagerUserTestBase extends TDWeb_002{
 		
 		
 	}
-	@Test (priority =1)
+	@Test (priority = 1)
 	public void login() throws InterruptedException, IOException
 	{
 		TDLogin();
 		 driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+		 
 	}
 @Test (priority = 2)
 	public void managinguserlinks() throws InterruptedException, IOException
 	{
-		
+	
 		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 		manageuserlink();
 		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
