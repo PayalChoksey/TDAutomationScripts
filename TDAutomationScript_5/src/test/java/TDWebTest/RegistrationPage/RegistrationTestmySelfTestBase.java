@@ -26,6 +26,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+
 public class RegistrationTestmySelfTestBase extends TDWeb_004{
 	
 	// Calling the method from the TDWeb_001 
@@ -48,26 +49,23 @@ public class RegistrationTestmySelfTestBase extends TDWeb_004{
 		
 	// Calling the method from TDWeb_001 to Verify the Title of the Page	
 		@Test (priority = 2, description="Verification of Title of the registration Page")
-
 		public void titleVerifying() throws IOException, InterruptedException
 		{
 			VerifyTitle();
 		}
 		
-		
 	// Calling the method from TDWeb_001 to Enter details in the Registration page - Test it my self
 	
-		@Parameters({"name","email","password"})
 		@Test (priority = 3, description="Entering Valid details on the Registration Page")
-
-		public void registrationData(String name, String email, String password) throws InterruptedException, IOException
-		
+		public void registrationData() throws InterruptedException, IOException
 		{
-			RegistrationDetails(name, email, password);
+			RegistrationDetails();
 		}
 
+		@Test (priority = 4, description="Login with registered email address")
+		public void loginData() throws InterruptedException, IOException
+		{
+			loginwithnewcredentials();
+		}
 	}
-	
-		
-		
 	

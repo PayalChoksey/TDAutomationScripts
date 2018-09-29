@@ -3,9 +3,17 @@
 <suite name="Suite">
 
    
-  <test name="NewManagerUserTestBase">
-     <classes>
-       <class name="TDWebTest.NewManagerUser.NewManagerUserTestBase"/>
+  <test name="RestrationTestmyself1">
+  <parameter name = "name" value = "payal"/>
+  <parameter name = "email" value ="payal+104@staff.com"/>
+  <parameter name = "password" value = "payal123"/>
+  <classes>
+       <class name="TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase"/>
      </classes>
    </test>
+   
+  
+  
+
+  
 </suite>

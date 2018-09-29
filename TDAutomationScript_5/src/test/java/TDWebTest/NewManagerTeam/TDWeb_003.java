@@ -48,16 +48,16 @@ public class TDWeb_003 extends TDWeb_001{
 		NewManageTeam.load(newmteam);
 		
 		test = report.startTest("Manage Team Page");
-		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
-		driver.get(NewManageTeam.getProperty("URLNewMTeam"));
+		tdweb.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+		tdweb.get(NewManageTeam.getProperty("URLNewMTeam"));
 		test.log(LogStatus.INFO, "Open New Manage Team Page");
-		String actual = driver.getCurrentUrl();
+		String actual = tdweb.getCurrentUrl();
 		test.log(LogStatus.INFO, "Actual Title returned :: " + actual);
 		String expected = "https://login.timedoctortest.com/apps/manage-teams";
 		test.log(LogStatus.INFO, "Expected Title returned:: "+ expected);
 		Assert.assertEquals(actual,expected);
 		test.log(LogStatus.PASS, "Manage User Page Opened Sucessfully");	
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+		File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 		Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/manageuserlink.jpg"));
 		test.log(LogStatus.INFO, "Screenshot Captured");
 		
@@ -69,9 +69,9 @@ public class TDWeb_003 extends TDWeb_001{
 	public void manageteampage()
 	{
 		test = report.startTest("Manage Team - Verifying the buttons and links"); 
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("ManageTeambtn"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("ManageTeambtn"))).click();
 		
-		String actual = driver.getCurrentUrl();
+		String actual = tdweb.getCurrentUrl();
 		test.log(LogStatus.INFO, "Actual Title returned :: " + actual);
 		String expected = "https://login.timedoctortest.com/apps/manage-teams";
 		test.log(LogStatus.INFO, "Expected Title returned:: "+ expected);
@@ -79,31 +79,31 @@ public class TDWeb_003 extends TDWeb_001{
 		test.log(LogStatus.PASS, "Manage Team Page Opened Sucessfully");	
 		
 		
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("Manageuser"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("Manageuser"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Manage User Page");	
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("ManageTeambtn"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("ManageTeambtn"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Manage Team Page");
 		// Filter expand and collapse
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
 		
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("filter"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Filter Button");
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("Redaddbtn"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("Redaddbtn"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Add Button");
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("Cancelbtn"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("Cancelbtn"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Cancel Button");
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("plusadd"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("plusadd"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Add ( + ) Button");
-		driver.findElement(By.cssSelector(NewManageTeam.getProperty("Cancelbtn"))).click();
+		tdweb.findElement(By.cssSelector(NewManageTeam.getProperty("Cancelbtn"))).click();
 		test.log(LogStatus.PASS, "Sucessfully clicked on Cancel Button");
-		driver.findElement(By.cssSelector("#search")).click();
+		tdweb.findElement(By.cssSelector("#search")).click();
 		
-        assertTrue((driver.findElements(By.cssSelector(NewManageTeam.getProperty("Manageuser"))).size() != 0));
-        assertTrue((driver.findElements(By.cssSelector(NewManageTeam.getProperty("ManageTeambtn"))).size() != 0));
-        assertTrue((driver.findElements(By.cssSelector(NewManageTeam.getProperty("filter"))).size() != 0));
-        assertTrue((driver.findElements(By.cssSelector("#search")).size() != 0));
+        assertTrue((tdweb.findElements(By.cssSelector(NewManageTeam.getProperty("Manageuser"))).size() != 0));
+        assertTrue((tdweb.findElements(By.cssSelector(NewManageTeam.getProperty("ManageTeambtn"))).size() != 0));
+        assertTrue((tdweb.findElements(By.cssSelector(NewManageTeam.getProperty("filter"))).size() != 0));
+        assertTrue((tdweb.findElements(By.cssSelector("#search")).size() != 0));
         String TD = "Team Directory" , addteam= "Add Team";
         Assert.assertEquals("Team Directory", TD);
 		 if(TD =="Team Directory")
@@ -124,8 +124,8 @@ public class TDWeb_003 extends TDWeb_001{
 			    test.log(LogStatus.FAIL, "Add Team Text is not Found");
 		 }
        
-        assertTrue((driver.findElements(By.cssSelector(NewManageTeam.getProperty("Redaddbtn"))).size() != 0));
-        assertTrue((driver.findElements(By.cssSelector(NewManageTeam.getProperty("plusadd"))).size() != 0));
+        assertTrue((tdweb.findElements(By.cssSelector(NewManageTeam.getProperty("Redaddbtn"))).size() != 0));
+        assertTrue((tdweb.findElements(By.cssSelector(NewManageTeam.getProperty("plusadd"))).size() != 0));
         
 		
         test.log(LogStatus.INFO, "Checking for all buttons and links on the page");
@@ -137,18 +137,18 @@ public class TDWeb_003 extends TDWeb_001{
 	public void manageteamcancel()
 	{
 		test = report.startTest("Manage Team - Verifying Cancel button"); 
-		driver.findElement(By.cssSelector("a[href=\"/apps/manage-teams\"]")).click();
-		String actual = driver.getCurrentUrl();
+		tdweb.findElement(By.cssSelector("a[href=\"/apps/manage-teams\"]")).click();
+		String actual = tdweb.getCurrentUrl();
 		test.log(LogStatus.INFO, "Actual Title returned :: " + actual);
 		String expected = "https://login.timedoctortest.com/apps/manage-teams";
 		test.log(LogStatus.INFO, "Expected Title returned:: "+ expected);
 		Assert.assertEquals(actual,expected);
 		test.log(LogStatus.PASS, "Manage Team Page Opened Sucessfully");	
-	    driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-btn-add-team")).click();
+		tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-btn-add-team")).click();
 	    test.log(LogStatus.PASS, "Team Details screen opened sucessfully");	
-	    driver.findElement(By.cssSelector(".td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-medium")).click();
-	    driver.findElement(By.cssSelector(".td-card--team__add-icon")).click();
-	    driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light > .td-icon-cancel.td-button__icon")).click();
+	    tdweb.findElement(By.cssSelector(".td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-medium")).click();
+	    tdweb.findElement(By.cssSelector(".td-card--team__add-icon")).click();
+	    tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light > .td-icon-cancel.td-button__icon")).click();
 	    test.log(LogStatus.INFO, "Clicked on Cancel button");
 	    test.log(LogStatus.PASS, "Closed Team Details Screen");
 	    report.endTest(test);
@@ -158,35 +158,35 @@ public class TDWeb_003 extends TDWeb_001{
 	public void manageteamsave() throws IOException
 	{
 			test = report.startTest("Manage Team - Save"); 
-			driver.findElement(By.cssSelector("a[href=\"/apps/manage-teams\"]")).click();
-	        driver.findElement(By.cssSelector(".td-icon.td-icon-plus")).click();
+			tdweb.findElement(By.cssSelector("a[href=\"/apps/manage-teams\"]")).click();
+			tdweb.findElement(By.cssSelector(".td-icon.td-icon-plus")).click();
 	        test.log(LogStatus.INFO, "( + ) - Add Team Button Clicked");
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).click();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).click();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).clear();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).sendKeys("Testing6");
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-text-primary")).click();
-	        driver.findElement(By.cssSelector(".td-confirmation-dialog__buttons > .td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-medium > .td-icon-cancel.td-button__icon")).click();
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-text-primary")).click();
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.save")).click();
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).click();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).click();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).clear();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).sendKeys("Testing6");
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-text-primary")).click();
+	        tdweb.findElement(By.cssSelector(".td-confirmation-dialog__buttons > .td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-medium > .td-icon-cancel.td-button__icon")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-text-primary")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.save")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
 	        
 	       
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
-	        driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"submit\"]")).click();
 	      
 	        test.log(LogStatus.INFO, "Clicked on Saved button");
 	      
-	        assertEquals(driver.findElement(By.cssSelector(".td-alert")).getText(), "Team created successfully!");
+	        assertEquals(tdweb.findElement(By.cssSelector(".td-alert")).getText(), "Team created successfully!");
 	        String alert3 = "Team created successfully!";
 	        if(alert3 == "Team created successfully!")
 			{
 				test.log(LogStatus.PASS, "Team is successfully created");
 				
 			
-				 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+				 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 					Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Manageteam1.jpg"));
 					test.log(LogStatus.INFO, "Screenshot Captured");
 			}
@@ -194,35 +194,35 @@ public class TDWeb_003 extends TDWeb_001{
 			{
 				test.log(LogStatus.FAIL, "Team is not created");
 				 test.log(LogStatus.INFO, "Clicked on Add Team - Red Button");
-				 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+				 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 					Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Manageteam2.jpg"));
 					test.log(LogStatus.INFO, "Screenshot Captured");
 			}
 	        test.log(LogStatus.INFO, "Clicked on Add Team Button - Red ");
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-btn-add-team")).click();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).click();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).click();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).clear();
-	        driver.findElement(By.cssSelector("input[name=\"name\"]")).sendKeys("testing7");
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
-	        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-default")).click();
-	        driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-btn-add-team")).click();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).click();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).click();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).clear();
+	        tdweb.findElement(By.cssSelector("input[name=\"name\"]")).sendKeys("testing7");
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-smaller")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--theme-default")).click();
+	        tdweb.findElement(By.cssSelector("button[type=\"submit\"]")).click();
 	        test.log(LogStatus.INFO, "Clicked on Saved button");
-	        assertEquals(driver.findElement(By.cssSelector(".td-alert")).getText(), "Team created successfully!");
+	        assertEquals(tdweb.findElement(By.cssSelector(".td-alert")).getText(), "Team created successfully!");
 	        String alert4 = "Team created successfully!";
 	        if(alert4 == "Team created successfully!")
 			{
 				test.log(LogStatus.PASS, "Team is successfully created");
 				
 			
-				 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+				 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 					Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Manageteam1.jpg"));
 					test.log(LogStatus.INFO, "Screenshot Captured");
 			}
 			else
 			{
 				test.log(LogStatus.FAIL, "Team is not created");
-				 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+				 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 					Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Manageteam2.jpg"));
 					test.log(LogStatus.INFO, "Screenshot Captured");
 			}
@@ -236,10 +236,10 @@ public class TDWeb_003 extends TDWeb_001{
 	public void manageteamdelete() throws IOException
 	{
 		test = report.startTest("Manage Team - Delete"); 
-		driver.findElement(By.cssSelector(".td-panel-body > .td-card.td-card--team.colors:nth-of-type(2) > .td-card__inner > .td-card__content > .td-card__members-count")).click();
+		tdweb.findElement(By.cssSelector(".td-panel-body > .td-card.td-card--team.colors:nth-of-type(2) > .td-card__inner > .td-card__content > .td-card__members-count")).click();
 
-		driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light-danger-text")).click();
-        assertEquals(driver.findElement(By.cssSelector(".td-modal-title")).getText(), "Trying to delete team?");
+		tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light-danger-text")).click();
+        assertEquals(tdweb.findElement(By.cssSelector(".td-modal-title")).getText(), "Trying to delete team?");
         test.log(LogStatus.INFO, "Clicking on Delete button");
         String alert4 = "Trying to delete team?!";
         if(alert4 == "Trying to delete team?!")
@@ -247,40 +247,40 @@ public class TDWeb_003 extends TDWeb_001{
 			test.log(LogStatus.PASS, "Popup Displayed sucessfully");
 			
 		
-			 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+			 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 				Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/manageteam3.jpg"));
 				test.log(LogStatus.INFO, "Screenshot Captured");
 		}
 		else
 		{
 			test.log(LogStatus.FAIL, "Popup didn't display");
-			 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+			 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 				Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Manageteam4.jpg"));
 				test.log(LogStatus.INFO, "Screenshot Captured");
 		}
-        driver.findElement(By.cssSelector(".td-modal-footer > .td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-medium")).click();
-        driver.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light-danger-text")).click();
-        driver.findElement(By.cssSelector(".td-modal-footer > .td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light-danger-text.td-button--box-default.td-button--kind-default.td-button--size-medium")).click();
+        tdweb.findElement(By.cssSelector(".td-modal-footer > .td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light.td-button--box-default.td-button--kind-default.td-button--size-medium")).click();
+        tdweb.findElement(By.cssSelector("button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light-danger-text")).click();
+        tdweb.findElement(By.cssSelector(".td-modal-footer > .td-button-row > button[type=\"button\"].td-button.td-button--with-icon.td-button--icon-position-left.td-button--theme-light-danger-text.td-button--box-default.td-button--kind-default.td-button--size-medium")).click();
      //   assertEquals(driver.findElement(By.cssSelector(".td-alert")).getText(), "Team created successfully!");
      //   test.log(LogStatus.FAIL, "Team is deleted sucessfully");
         test.log(LogStatus.INFO, "Clicking on Delete button");
         String alert5 = "Team created successfully!";
         
-        if(alert5 == driver.findElement(By.cssSelector(".td-alert")).getText())
+        if(alert5 == tdweb.findElement(By.cssSelector(".td-alert")).getText())
    //     if(alert5 == "Team created successfully!")
 		{
 			
         	test.log(LogStatus.PASS, "Team is deleted sucessfully");
 			
 		
-			 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+			 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 				Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/manageteam4.jpg"));
 				test.log(LogStatus.INFO, "Screenshot Captured");
 		}
 		else
 		{
 			test.log(LogStatus.FAIL, "Invalid error message is displayed");
-			 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
+			 File scrFile = ((TakesScreenshot)tdweb).getScreenshotAs(OutputType.FILE); // gets the screen shot in bytes 0101010
 				Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Manageteam5.jpg"));
 				test.log(LogStatus.INFO, "Screenshot Captured");
 		}
