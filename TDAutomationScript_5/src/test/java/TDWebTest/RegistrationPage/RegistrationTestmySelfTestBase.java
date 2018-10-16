@@ -46,7 +46,6 @@ public class RegistrationTestmySelfTestBase extends TDWeb_004{
 			TDRegistrationPage();
 		}
 		
-		
 	// Calling the method from TDWeb_001 to Verify the Title of the Page	
 		@Test (priority = 2, description="Verification of Title of the registration Page")
 		public void titleVerifying() throws IOException, InterruptedException
@@ -61,7 +60,8 @@ public class RegistrationTestmySelfTestBase extends TDWeb_004{
 		{
 			RegistrationDetails();
 		}
-
+		
+    // Login with registered email address
 		@Test (priority = 4, description="Login with registered email address")
 		public void loginData() throws InterruptedException, IOException
 		{

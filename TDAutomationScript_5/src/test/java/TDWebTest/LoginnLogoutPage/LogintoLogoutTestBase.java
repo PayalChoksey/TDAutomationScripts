@@ -67,7 +67,7 @@ public class LogintoLogoutTestBase extends TDWeb_005{
 
 	}
 		
-
+		// Verification for forgot password functionality
 		@Test (priority = 4, description="Verfication of all fields present on Login Page")
 
 		public void forgotPassword() throws InterruptedException, IOException
@@ -76,7 +76,7 @@ public class LogintoLogoutTestBase extends TDWeb_005{
 			Forgotpassword();
 
 	}
-		
+	// Checking for different language 
 		@Test (priority = 5, description="Login page for different language")
 
 		public void langaugeverification() throws InterruptedException, IOException
@@ -85,17 +85,18 @@ public class LogintoLogoutTestBase extends TDWeb_005{
 			language();
 
 	}
-		
+	// Login with google account	
 		@Test (priority = 6, description="Login page with google account")
 
 		public void logingoogle() throws InterruptedException, IOException
 		
 		{
-			googlelogin();
+		//	googlelogin();
 
 	}
+	//Login with normal login from the document
 		@Parameters({"email","password"})
-		@Test (priority = 7, description="Login page")
+		@Test (priority = 7, description="Login page",invocationCount = 100)
 
 		public void credentials(String email, String password) throws InterruptedException, IOException
 		

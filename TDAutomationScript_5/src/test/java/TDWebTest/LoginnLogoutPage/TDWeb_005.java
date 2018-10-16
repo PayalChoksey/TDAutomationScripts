@@ -54,23 +54,17 @@ public class TDWeb_005 {
 	ExtentReports report;
 	
 	// Declaring the Property files from where the value or objects will be fetched
-	
 	public void IntializingProperties() throws IOException
 	{
-		
 		Config= new Properties();
 		FileInputStream config =new FileInputStream(System.getProperty("user.dir")+"/src//test//resources//Source//Config.properties");
 		Config.load(config);
-		
 		LoginOR= new Properties();
 		FileInputStream loginor =new FileInputStream(System.getProperty("user.dir")+"//src//test//resources//Source//LoginPage.properties");
 		LoginOR.load(loginor);
-		
-		
 	}
 	
 	// Calling the application in various browser Chrome, Safari and Firefox. Note only chrome is implemented at the moment
-	
 	public void TDLoginPage() throws InterruptedException, IOException
 	{
 		report = new ExtentReports(
@@ -94,9 +88,7 @@ public class TDWeb_005 {
 		}
 		else if(Config.getProperty("BrowserName").equals("Safari"))
 		{
-
 			System.out.println(" Safari to be implemented");
-			
 		}
 	}
 	
@@ -104,23 +96,22 @@ public class TDWeb_005 {
 	public void VerifyTitle() throws InterruptedException, IOException
 		{
 			
-		test = report.startTest("TD Title of Page", "Verifying the Title of the Page");
-		String actualTitle = driver.getTitle();
-		test.log(LogStatus.INFO, "Actual Title of Page returned :: " + actualTitle);
-		String expectedTitle = "Login to Time Doctor";
-		test.log(LogStatus.INFO, "Expected Title of Page returned :: "+ expectedTitle);
-		Assert.assertEquals(actualTitle,expectedTitle);
-		test.log(LogStatus.PASS, "Title of the Page is valid");	
-		driver.manage().window().fullscreen();
-		Thread.sleep(3000L);
-		report.endTest(test);
-		report.flush();
+			test = report.startTest("TD Title of Page", "Verifying the Title of the Page");
+			String actualTitle = driver.getTitle();
+			test.log(LogStatus.INFO, "Actual Title of Page returned :: " + actualTitle);
+			String expectedTitle = "Login to Time Doctor";
+			test.log(LogStatus.INFO, "Expected Title of Page returned :: "+ expectedTitle);
+			Assert.assertEquals(actualTitle,expectedTitle);
+			test.log(LogStatus.PASS, "Title of the Page is valid");	
+			driver.manage().window().fullscreen();
+			Thread.sleep(3000L);
+			report.endTest(test);
+			report.flush();
 		}
 	
 	// Verifying all the functionality present on the login page
 	public void LoginVerfication ()
 		{
-    
 			test = report.startTest("Time Doctor Login Page", "Verifying the functionality present on Login Page");
 			// Verfiying  Goodbye Wasterd Time text
 			String actualTitle = driver.getTitle();
@@ -260,13 +251,10 @@ public class TDWeb_005 {
 		assertEquals(driver.findElement(By.cssSelector("#forgot-password-form > p > strong")).getText(), "email address");
 		assertTrue((driver.findElements(By.cssSelector("#forgot-password-form > p")).size() != 0));
 		assertTrue((driver.findElements(By.cssSelector("input[name=\"email\"]")).size() != 0));	
-
 		String forgotpass =  driver.findElement(By.xpath("//*[@id='forgot-pasword-page']/div/div[2]/div/span[1]")).getText();
 		if ( forgotpass.equals("Can't Login? Forgot your password?"))
 		{
-			
 			test.log(LogStatus.PASS, "Can't Login? Forgot your password?");
-			
 		}
 		else
 		{
@@ -290,7 +278,6 @@ public class TDWeb_005 {
         driver.findElement(By.cssSelector("input[name=\"email\"]")).click();
         driver.findElement(By.cssSelector("input[name=\"email\"]")).click();
         driver.findElement(By.cssSelector("input[name=\"email\"]")).clear();
-        
         driver.findElement(By.cssSelector("input[name=\"email\"]")).sendKeys("p");
         test.log(LogStatus.INFO, "Checking for invalid email address");
         driver.findElement(By.cssSelector("input[type=\"button\"]")).click();
@@ -358,7 +345,6 @@ public class TDWeb_005 {
 		{
 			test.log(LogStatus.FAIL, "Time Doctor Login Page is not opened in Russian");
 		}
-      
         driver.findElement(By.cssSelector("a[href^=\"/\"].language-english-link")).click();
         driver.findElement(By.cssSelector("a[href=\"#\"].language-link")).click();
         driver.findElement(By.cssSelector(".languages > ul > li:nth-of-type(5) > a[href^=\"/\"]")).click();
@@ -443,8 +429,6 @@ public class TDWeb_005 {
 		driver.findElement(By.cssSelector("#signinButtonGoogle > img")).click();
 		driver.findElement(By.cssSelector("#identifierId")).click();
 		driver.findElement(By.cssSelector("#identifierId")).clear();
-		
-	       
 		driver.findElement(By.cssSelector("#identifierId")).sendKeys("payalstaff01@gmail.com");
 		test.log(LogStatus.INFO, "Google Login Page - Entered email address");
 		driver.findElement(By.cssSelector("#identifierNext > content.CwaK9 > .RveJvd.snByac")).click();
@@ -459,9 +443,7 @@ public class TDWeb_005 {
 		test.log(LogStatus.PASS, "Logout from the application sucessfully");
 		report.endTest(test);
 		report.flush();
-	      
-	
-	}
+	 }
 	// Login with credentials
 	public void login(String email, String password) throws IOException
 	{
@@ -473,19 +455,13 @@ public class TDWeb_005 {
 		test.log(LogStatus.INFO, "Enter valid password");
 		driver.findElement(By.cssSelector("#password")).sendKeys(Keys.ENTER);
 		test.log(LogStatus.PASS, "Login sucessfully");
-		//File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	//	Files.copy(scrFile, new File("/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/src/test/resources/Screenshot/Login/vloginpage.jpg"));// copies the image that is bytes to .jpg
 		test.log(LogStatus.PASS, "Screenshot captured after login with valid credentials");
 		driver.findElement(By.cssSelector(".company-section > h3")).click();
 		driver.findElement(By.cssSelector("a[href^=\"/logout\"] > span")).click();
 		report.endTest(test);
 		report.flush();
+		driver.quit();
 	}
 	
 }
-	
-
-	
-		
-
 // Ending of Login Page 

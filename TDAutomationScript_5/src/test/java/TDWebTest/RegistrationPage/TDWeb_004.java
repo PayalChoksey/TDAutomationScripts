@@ -61,10 +61,8 @@ public class TDWeb_004 extends TDWeb_001 {
 	ExtentReports report;
 	
 	// Declaring the Property files from where the value or objects will be fetched
-	
 	public void IntializingProperties() throws IOException
 	{
-		
 		Config= new Properties();
 		FileInputStream config =new FileInputStream(System.getProperty("user.dir")+"/src//test//resources//Source//Config.properties");
 		Config.load(config);
@@ -79,7 +77,6 @@ public class TDWeb_004 extends TDWeb_001 {
 	}
 	
 	// Calling the application in various browser Chrome, Safari and Firefox. Note only chrome is implemented at the moment
-	
 	public void TDRegistrationPage() throws InterruptedException, IOException
 	{
 		report = new ExtentReports(
@@ -87,15 +84,13 @@ public class TDWeb_004 extends TDWeb_001 {
 		if(Config.getProperty("BrowserName").equals("Chrome"))
 		{
 			test = report.startTest("TD Registration Page - In Chrome", "Opening the Application");
-			
-		
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//test//resources//Source//chromedriver");
 			tdweb = new ChromeDriver();
 			tdweb.manage().window().fullscreen();
 			test.log(LogStatus.INFO, "Chrome Browser Launched Successfully");
-		//	UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
+			UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
 			tdweb.get(Config.getProperty("RegistrationURL"));
-		//	UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
+			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
 			tdweb.findElement(By.id("question1")).click();
 			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Do you manage other people?'])[1]/following::button[1]")).click();
 			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='The average time wasted is 2.09 hours daily'])[1]/following::button[1]")).click();
@@ -116,32 +111,31 @@ public class TDWeb_004 extends TDWeb_001 {
 			
 		}
 	}
-		// Verifying the Title of the page displayed
+	
+	// Verifying the Title of the page displayed
 	public void VerifyTitle() throws InterruptedException, IOException
 		{
-			
-		test = report.startTest("TD Title of Page", "Verifying the Title of the Page");
-		String actualTitle = tdweb.getTitle();
-		test.log(LogStatus.INFO, "Actual Title of Page returned :: " + actualTitle);
-		String expectedTitle = "Smart Employee Time Tracking Software with Screenshots | Time Doctor";
-		test.log(LogStatus.INFO, "Expected Title of Page returned :: "+ expectedTitle);
-		Assert.assertEquals(actualTitle,expectedTitle);
-	//	UtilityRegistration.capturescreenshot(tdweb, "TitleofPage");
-		test.log(LogStatus.PASS, "Title of the Page is valid");	
-		tdweb.manage().window().fullscreen();
-		Thread.sleep(3000L);
-		report.endTest(test);
-		report.flush();
+			test = report.startTest("TD Title of Page", "Verifying the Title of the Page");
+			String actualTitle = tdweb.getTitle();
+			test.log(LogStatus.INFO, "Actual Title of Page returned :: " + actualTitle);
+			String expectedTitle = "Smart Employee Time Tracking Software with Screenshots | Time Doctor";
+			test.log(LogStatus.INFO, "Expected Title of Page returned :: "+ expectedTitle);
+			Assert.assertEquals(actualTitle,expectedTitle);
+			UtilityRegistration.capturescreenshot(tdweb, "TitleofPage");
+			test.log(LogStatus.PASS, "Title of the Page is valid");	
+			tdweb.manage().window().fullscreen();
+			Thread.sleep(3000L);
+			report.endTest(test);
+			report.flush();
 		}
-	
 	
 	// Entering the valid credentials on Registration Page
 	public void RegistrationDetails () throws InterruptedException, IOException
 	
 		{
-		String registrationType = "TestmySelf";
-		String localEmail = "payal+";
-        String domainEmail = "@staff.com";
+			String registrationType = "TestmySelf";
+			String localEmail = "payal+";
+			String domainEmail = "@staff.com";
         
         // Different ways to Register TestmySelf, Invite Team, Unique link
 		
@@ -161,7 +155,6 @@ public class TDWeb_004 extends TDWeb_001 {
 		        tdweb.findElement(By.id(RegOR.getProperty("Email"))).sendKeys(localEmail+strDate+domainEmail);
 			    test.log(LogStatus.INFO, "Entered the email as  :: " + localEmail+strDate+domainEmail);
 			    System.out.println(localEmail+strDate+domainEmail);
-			  
 			    tdweb.findElement(By.id(RegOR.getProperty("Password"))).clear();
 			    tdweb.findElement(By.id(RegOR.getProperty("Password"))).sendKeys("payal123");
 			    test.log(LogStatus.INFO, "Entered the password as  :: " + "payal123");
@@ -189,6 +182,7 @@ public class TDWeb_004 extends TDWeb_001 {
 			    	test.log(LogStatus.INFO, "A user with that email already exists!");	
 			    	test.log(LogStatus.FAIL, "User has entered invalid details");	
 			    	test.log(LogStatus.FAIL, " User is unable to navigate to Dashboard Page - Wrong data entered");	
+			    	UtilityRegistration.capturescreenshot(tdweb, "Invaliddashboardopened");
 					test.log(LogStatus.INFO, "Screenshot captured after user entering invalid data");
 					report.endTest(test);
 			   		report.flush();
@@ -203,6 +197,7 @@ public class TDWeb_004 extends TDWeb_001 {
 					Thread.sleep(10000L);
 					String homepage = tdweb.getWindowHandle();
 					System.out.println(homepage);
+					UtilityRegistration.capturescreenshot(tdweb, "popuplogin");
 					tdweb.findElement(By.cssSelector("#discount-popup-close")).click();
 					test.log(LogStatus.PASS, "Popup is sucessfully closed");
 					Thread.sleep(2000L);
@@ -212,12 +207,13 @@ public class TDWeb_004 extends TDWeb_001 {
 					Thread.sleep(2000L);
 					tdweb.findElement(By.xpath("//*[@id='default-phone']/div/div/div[3]/a/translate/span")).click();
 					Thread.sleep(5000L);
+					test.log(LogStatus.PASS, "All popup closed");
 					tdweb.findElement(By.xpath("//*[@id='mCSB_1_container']/ul[1]/li/div")).click();
+					UtilityRegistration.capturescreenshot(tdweb, "logout");
 					tdweb.findElement(By.xpath("//*[@id='company-list']/li/a")).click();
 					test.log(LogStatus.PASS, "User has sucessfully logged out from the application");
 			    	report.endTest(test);
 			   		report.flush();
-			    	
 			    }
 			    else
 			    {
@@ -260,6 +256,7 @@ public class TDWeb_004 extends TDWeb_001 {
 				    	test = report.startTest("TD Registration Page", "Entering the details on Registration Page");
 					  	test.log(LogStatus.FAIL, "Invalid Registration information are entered");
 				    	System.out.println("Enter the valid credentials");
+				    	UtilityRegistration.capturescreenshot(tdweb, "wrongcredentials");
 				    	report.endTest(test);
 				   		report.flush();
 				    }
@@ -315,29 +312,26 @@ public class TDWeb_004 extends TDWeb_001 {
 				    tdweb.findElement(By.xpath("//*[@id='main-content']/section[1]/div/header/div/a/span[1]")).click();
 				    tdweb.findElement(By.xpath("//*[@id='mCSB_1_container']/ul[1]/li/div")).click();
 					tdweb.findElement(By.xpath("//*[@id='company-list']/li/a")).click();
-				
 					test.log(LogStatus.PASS, "User has sucessfully logged out from the application");
 					UtilityRegistration.capturescreenshot(tdweb, "Invitebylinklogout");
 				    Thread.sleep(5000L);
 				    test.log(LogStatus.PASS, "Details are entered");
 				    report.endTest(test);
 			   		report.flush();
-			   		
-				    }
+			   	}
 				 else
 				    {
 				    	System.out.println("Please check you connectivity");
-				  
-			    
-			    	test = report.startTest("TD Registration Page", "Entering the details on Registration Page");
-			    	test.log(LogStatus.FAIL, "No such Registration found");
-			    	System.out.println("No such resgistration process found");
-			    	report.endTest(test);
-			   		report.flush();
+				    	test = report.startTest("TD Registration Page", "Entering the details on Registration Page");
+				    	test.log(LogStatus.FAIL, "No such Registration found");
+				    	System.out.println("No such resgistration process found");
+				    	report.endTest(test);
+				    	report.flush();
 				    }
 		}
 		  
-		  public void loginwithnewcredentials() throws IOException
+	// Login with new credentials 
+	public void loginwithnewcredentials() throws IOException
 			{
 				test = report.startTest("Time Doctor Login Page - Normal Login ", "Login");
 				test.log(LogStatus.INFO, "Login Page - Login"); 
@@ -347,13 +341,11 @@ public class TDWeb_004 extends TDWeb_001 {
 		         String strLine;
 		         int count = 0;
 		         count++;
-
 		         while((strLine = br.readLine())!= null)
 		         {
 		             //Enter userName
 		             tdweb.findElement(By.cssSelector("#email")).sendKeys(strLine);
 		             System.out.println(strLine);
-
 		             strLine = br.readLine();
 		             count++;
 		             test.log(LogStatus.INFO, "Email address entered"); 
@@ -369,9 +361,8 @@ public class TDWeb_004 extends TDWeb_001 {
 		         }
 		       
 		         br.close();
-				
-				report.endTest(test);
-				report.flush();
+		         report.endTest(test);
+		         report.flush();
 }
 }
 // Ending of Login Page 
