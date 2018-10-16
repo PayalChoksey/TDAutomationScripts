@@ -1,79 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="9" passed="7">
+<testng-results skipped="0" failed="2" ignored="0" total="4" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="151265" started-at="2018-08-10T03:16:37Z" finished-at="2018-08-10T03:19:08Z">
+  <suite name="Default suite" duration-ms="18768" started-at="2018-10-16T02:57:20Z" finished-at="2018-10-16T02:57:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="151265" started-at="2018-08-10T03:16:37Z" finished-at="2018-08-10T03:19:08Z">
-      <class name="TDWebTest.NewManagerUser.NewManagerUserTestBase">
-        <test-method status="PASS" signature="Login()[pri:0, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="Login" is-config="true" duration-ms="15" started-at="2018-08-10T03:16:37Z" finished-at="2018-08-10T03:16:37Z">
+    <test name="Default test" duration-ms="18768" started-at="2018-10-16T02:57:20Z" finished-at="2018-10-16T02:57:39Z">
+      <class name="TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase">
+        <test-method status="PASS" signature="propCalling()[pri:0, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="propCalling" is-config="true" duration-ms="20" started-at="2018-10-16T02:57:20Z" finished-at="2018-10-16T02:57:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="login()[pri:1, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="login" duration-ms="17581" started-at="2018-08-10T03:16:37Z" finished-at="2018-08-10T03:16:55Z">
+        </test-method> <!-- propCalling -->
+        <test-method status="PASS" signature="browserCalling()[pri:1, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="browserCalling" duration-ms="13744" started-at="2018-10-16T02:57:20Z" description="Navigates to the time doctor registration page" finished-at="2018-10-16T02:57:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="managinguserlinks()[pri:2, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="managinguserlinks" duration-ms="14553" started-at="2018-08-10T03:16:55Z" finished-at="2018-08-10T03:17:09Z">
+        </test-method> <!-- browserCalling -->
+        <test-method status="PASS" signature="titleVerifying()[pri:2, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="titleVerifying" duration-ms="3079" started-at="2018-10-16T02:57:34Z" description="Verification of Title of the registration Page" finished-at="2018-10-16T02:57:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- managinguserlinks -->
-        <test-method status="PASS" signature="newmanageuserscreen()[pri:3, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="newmanageuserscreen" duration-ms="4267" started-at="2018-08-10T03:17:09Z" finished-at="2018-08-10T03:17:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- newmanageuserscreen -->
-        <test-method status="PASS" signature="userdetails()[pri:4, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="userdetails" duration-ms="1202" started-at="2018-08-10T03:17:13Z" finished-at="2018-08-10T03:17:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userdetails -->
-        <test-method status="PASS" signature="inviteusers()[pri:5, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="inviteusers" duration-ms="4641" started-at="2018-08-10T03:17:15Z" finished-at="2018-08-10T03:17:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inviteusers -->
-        <test-method status="PASS" signature="defaultsettings()[pri:6, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="defaultsettings" duration-ms="24068" started-at="2018-08-10T03:17:19Z" finished-at="2018-08-10T03:17:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- defaultsettings -->
-        <test-method status="FAIL" signature="filters()[pri:7, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="filters" duration-ms="1266" started-at="2018-08-10T03:17:43Z" finished-at="2018-08-10T03:17:45Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        </test-method> <!-- titleVerifying -->
+        <test-method status="FAIL" signature="registrationData()[pri:3, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="registrationData" duration-ms="1456" started-at="2018-10-16T02:57:37Z" description="Entering Valid details on the Registration Page" finished-at="2018-10-16T02:57:39Z">
+          <exception class="java.io.FileNotFoundException">
             <message>
-              <![CDATA[unknown error: Element <h4 class="td-title--small-uppercase td-util__ellipsis">...</h4> is not clickable at point (183, 255). Other element would receive the click: <div>...</div>
-  (Session info: chrome=68.0.3440.106)
-  (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'Payals-MacBook-Air.local', ip: '2405:204:8082:a31f:bd4a:d3fc:c4e8:84c3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_172'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565386 (45a059dc425e08..., userDataDir: /var/folders/9x/sh5pv8y1571...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
-Session ID: d4c4a92b7c7194cab15bb2fb730ece39]]>
+              <![CDATA[src/test/resources/Screenshot/Registration/TestmyselfDetails.jpg (No such file or directory)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <h4 class="td-title--small-uppercase td-util__ellipsis">...</h4> is not clickable at point (183, 255). Other element would receive the click: <div>...</div>
-  (Session info: chrome=68.0.3440.106)
-  (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'Payals-MacBook-Air.local', ip: '2405:204:8082:a31f:bd4a:d3fc:c4e8:84c3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_172'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565386 (45a059dc425e08..., userDataDir: /var/folders/9x/sh5pv8y1571...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
-Session ID: d4c4a92b7c7194cab15bb2fb730ece39
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-at TDWebTest.NewManagerUser.TDWeb_002.filtersscreen(TDWeb_002.java:249)
-at TDWebTest.NewManagerUser.NewManagerUserTestBase.filters(NewManagerUserTestBase.java:64)
+              <![CDATA[java.io.FileNotFoundException: src/test/resources/Screenshot/Registration/TestmyselfDetails.jpg (No such file or directory)
+at java.io.FileOutputStream.open0(Native Method)
+at java.io.FileOutputStream.open(FileOutputStream.java:270)
+at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+at com.google.common.io.Files$FileByteSink.openStream(Files.java:192)
+at com.google.common.io.Files$FileByteSink.openStream(Files.java:180)
+at com.google.common.io.ByteSource.copyTo(ByteSource.java:268)
+at com.google.common.io.Files.copy(Files.java:319)
+at TDWebTest.CaptureScreenShot.UtilityRegistration.capturescreenshot(UtilityRegistration.java:19)
+at TDWebTest.RegistrationPage.TDWeb_004.RegistrationDetails(TDWeb_004.java:178)
+at TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase.registrationData(RegistrationTestmySelfTestBase.java:62)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -101,41 +63,37 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- filters -->
-        <test-method status="PASS" signature="cancelmanageteam()[pri:8, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="cancelmanageteam" duration-ms="1013" started-at="2018-08-10T03:17:45Z" finished-at="2018-08-10T03:17:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cancelmanageteam -->
-        <test-method status="FAIL" signature="savemanageteam()[pri:9, instance:TDWebTest.NewManagerUser.NewManagerUserTestBase@1e965684]" name="savemanageteam" duration-ms="82610" started-at="2018-08-10T03:17:46Z" finished-at="2018-08-10T03:19:08Z">
+        </test-method> <!-- registrationData -->
+        <test-method status="FAIL" signature="loginData()[pri:4, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="loginData" duration-ms="429" started-at="2018-10-16T02:57:39Z" description="Login with registered email address" finished-at="2018-10-16T02:57:39Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"button[type="button"].td-button.td-button--theme-default"}
-  (Session info: chrome=68.0.3440.106)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='signinFormButton']"}
+  (Session info: chrome=69.0.3497.100)
   (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'Payals-MacBook-Air.local', ip: '2405:204:8082:a31f:bd4a:d3fc:c4e8:84c3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_172'
+System info: host: 'Payals-MacBook-Air.local', ip: '2405:205:c806:92da:2c5c:570:ba93:b414%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_172'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565386 (45a059dc425e08..., userDataDir: /var/folders/9x/sh5pv8y1571...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
-Session ID: d4c4a92b7c7194cab15bb2fb730ece39
-*** Element info: {Using=css selector, value=button[type="button"].td-button.td-button--theme-default}]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565386 (45a059dc425e08..., userDataDir: /var/folders/9x/sh5pv8y1571...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 86651e4218dda711f1b032cb9754cf4f
+*** Element info: {Using=xpath, value=//*[@id='signinFormButton']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"button[type="button"].td-button.td-button--theme-default"}
-  (Session info: chrome=68.0.3440.106)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='signinFormButton']"}
+  (Session info: chrome=69.0.3497.100)
   (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'Payals-MacBook-Air.local', ip: '2405:204:8082:a31f:bd4a:d3fc:c4e8:84c3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_172'
+System info: host: 'Payals-MacBook-Air.local', ip: '2405:205:c806:92da:2c5c:570:ba93:b414%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_172'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565386 (45a059dc425e08..., userDataDir: /var/folders/9x/sh5pv8y1571...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
-Session ID: d4c4a92b7c7194cab15bb2fb730ece39
-*** Element info: {Using=css selector, value=button[type="button"].td-button.td-button--theme-default}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565386 (45a059dc425e08..., userDataDir: /var/folders/9x/sh5pv8y1571...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 86651e4218dda711f1b032cb9754cf4f
+*** Element info: {Using=xpath, value=//*[@id='signinFormButton']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -149,11 +107,11 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:416)
-at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-at TDWebTest.NewManagerUser.TDWeb_002.manageteamsave(TDWeb_002.java:381)
-at TDWebTest.NewManagerUser.NewManagerUserTestBase.savemanageteam(NewManagerUserTestBase.java:84)
+at TDWebTest.RegistrationPage.TDWeb_004.loginwithnewcredentials(TDWeb_004.java:364)
+at TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase.loginData(RegistrationTestmySelfTestBase.java:68)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -184,8 +142,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- savemanageteam -->
-      </class> <!-- TDWebTest.NewManagerUser.NewManagerUserTestBase -->
+        </test-method> <!-- loginData -->
+      </class> <!-- TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

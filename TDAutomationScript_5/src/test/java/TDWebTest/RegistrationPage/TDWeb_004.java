@@ -93,9 +93,9 @@ public class TDWeb_004 extends TDWeb_001 {
 			tdweb = new ChromeDriver();
 			tdweb.manage().window().fullscreen();
 			test.log(LogStatus.INFO, "Chrome Browser Launched Successfully");
-			UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
+		//	UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
 			tdweb.get(Config.getProperty("RegistrationURL"));
-			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
+		//	UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
 			tdweb.findElement(By.id("question1")).click();
 			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Do you manage other people?'])[1]/following::button[1]")).click();
 			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='The average time wasted is 2.09 hours daily'])[1]/following::button[1]")).click();
@@ -126,7 +126,7 @@ public class TDWeb_004 extends TDWeb_001 {
 		String expectedTitle = "Smart Employee Time Tracking Software with Screenshots | Time Doctor";
 		test.log(LogStatus.INFO, "Expected Title of Page returned :: "+ expectedTitle);
 		Assert.assertEquals(actualTitle,expectedTitle);
-		UtilityRegistration.capturescreenshot(tdweb, "TitleofPage");
+	//	UtilityRegistration.capturescreenshot(tdweb, "TitleofPage");
 		test.log(LogStatus.PASS, "Title of the Page is valid");	
 		tdweb.manage().window().fullscreen();
 		Thread.sleep(3000L);

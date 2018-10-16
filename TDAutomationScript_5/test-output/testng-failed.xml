@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TDWebTest.NewManagerUser.NewManagerUserTestBase">
+      <class name="TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase">
         <methods>
-          <include name="filters"/>
-          <include name="Login"/>
-          <include name="savemanageteam"/>
+          <include name="propCalling"/>
+          <include name="loginData"/>
+          <include name="registrationData"/>
         </methods>
-      </class> <!-- TDWebTest.NewManagerUser.NewManagerUserTestBase -->
+      </class> <!-- TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
