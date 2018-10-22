@@ -46,7 +46,7 @@ public class EditTimeTestBase extends TDWeb_006{
 		}
 		
 		@Parameters({"email","password"})
-		@Test (priority = 2, description="Login with Valid credentials", invocationCount = 100)
+		@Test (priority = 2, description="Login with Valid credentials")
 
 		public void logindetails(String email, String password) throws IOException, InterruptedException
 		{

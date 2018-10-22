@@ -5,10 +5,10 @@
    
   <test name="Login">
   
-  <parameter name = "email" value ="payal+42@staff.com"/>
+  <parameter name = "email" value ="payal+52@staff.com"/>
   <parameter name = "password" value = "payal123"/>
   <classes>
-       <class name="TDWebTest.LoginnLogoutPage.LogintoLogoutTestBase"/>
+       <class name="EditTimeCustomerBug.CustBugTime68"/>
      </classes>
    </test>
    

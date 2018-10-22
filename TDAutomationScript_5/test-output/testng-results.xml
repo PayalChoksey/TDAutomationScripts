@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69038" started-at="2018-10-16T03:13:43Z" finished-at="2018-10-16T03:14:52Z">
+  <suite name="Default suite" duration-ms="73621" started-at="2018-10-22T03:52:34Z" finished-at="2018-10-22T03:53:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69038" started-at="2018-10-16T03:13:43Z" finished-at="2018-10-16T03:14:52Z">
+    <test name="Default test" duration-ms="73621" started-at="2018-10-22T03:52:34Z" finished-at="2018-10-22T03:53:47Z">
       <class name="TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase">
-        <test-method status="PASS" signature="propCalling()[pri:0, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="propCalling" is-config="true" duration-ms="12" started-at="2018-10-16T03:13:43Z" finished-at="2018-10-16T03:13:43Z">
+        <test-method status="PASS" signature="propCalling()[pri:0, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="propCalling" is-config="true" duration-ms="21" started-at="2018-10-22T03:52:34Z" finished-at="2018-10-22T03:52:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propCalling -->
-        <test-method status="PASS" signature="browserCalling()[pri:1, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="browserCalling" duration-ms="12335" started-at="2018-10-16T03:13:43Z" description="Navigates to the time doctor registration page" finished-at="2018-10-16T03:13:55Z">
+        <test-method status="PASS" signature="browserCalling()[pri:1, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="browserCalling" duration-ms="14798" started-at="2018-10-22T03:52:34Z" description="Navigates to the time doctor registration page" finished-at="2018-10-22T03:52:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserCalling -->
-        <test-method status="PASS" signature="titleVerifying()[pri:2, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="titleVerifying" duration-ms="3572" started-at="2018-10-16T03:13:55Z" description="Verification of Title of the registration Page" finished-at="2018-10-16T03:13:59Z">
+        <test-method status="PASS" signature="titleVerifying()[pri:2, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="titleVerifying" duration-ms="3641" started-at="2018-10-22T03:52:49Z" description="Verification of Title of the registration Page" finished-at="2018-10-22T03:52:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- titleVerifying -->
-        <test-method status="PASS" signature="registrationData()[pri:3, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="registrationData" duration-ms="47933" started-at="2018-10-16T03:13:59Z" description="Entering Valid details on the Registration Page" finished-at="2018-10-16T03:14:47Z">
+        <test-method status="PASS" signature="registrationData()[pri:3, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="registrationData" duration-ms="48244" started-at="2018-10-22T03:52:52Z" description="Entering Valid details on the Registration Page" finished-at="2018-10-22T03:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationData -->
-        <test-method status="PASS" signature="loginData()[pri:4, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="loginData" duration-ms="5153" started-at="2018-10-16T03:14:47Z" description="Login with registered email address" finished-at="2018-10-16T03:14:52Z">
+        <test-method status="PASS" signature="loginData()[pri:4, instance:TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase@167fdd33]" name="loginData" duration-ms="6766" started-at="2018-10-22T03:53:41Z" description="Login with registered email address" finished-at="2018-10-22T03:53:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginData -->

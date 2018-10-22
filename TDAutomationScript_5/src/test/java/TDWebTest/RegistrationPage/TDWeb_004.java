@@ -363,6 +363,7 @@ public class TDWeb_004 extends TDWeb_001 {
 		         br.close();
 		         report.endTest(test);
 		         report.flush();
+		         tdweb.close();
 }
 }
 // Ending of Login Page 

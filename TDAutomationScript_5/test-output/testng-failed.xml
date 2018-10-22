@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Login(failed)">
+    <parameter name="password" value="payal123"/>
+    <parameter name="email" value="payal+52@staff.com"/>
     <classes>
-      <class name="TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase">
+      <class name="EditTimeCustomerBug.CustBugTime62">
         <methods>
           <include name="propCalling"/>
-          <include name="loginData"/>
-          <include name="registrationData"/>
+          <include name="workingslot"/>
         </methods>
-      </class> <!-- TDWebTest.RegistrationPage.RegistrationTestmySelfTestBase -->
+      </class> <!-- EditTimeCustomerBug.CustBugTime62 -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [Suite] -->

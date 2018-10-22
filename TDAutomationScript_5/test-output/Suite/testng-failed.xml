@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="NewManagerUserTestBase(failed)">
+  <test thread-count="5" name="Login(failed)">
+    <parameter name="password" value="payal123"/>
+    <parameter name="email" value="payal+52@staff.com"/>
     <classes>
-      <class name="TDWebTest.NewManagerUser.NewManagerUserTestBase">
+      <class name="EditTimeCustomerBug.CustBugTime62">
         <methods>
-          <include name="filters"/>
-          <include name="Login"/>
-          <include name="inviteusers"/>
-          <include name="managinguserlinks"/>
-          <include name="defaultsettings"/>
-          <include name="userdetails"/>
+          <include name="propCalling"/>
+          <include name="workingslot"/>
         </methods>
-      </class> <!-- TDWebTest.NewManagerUser.NewManagerUserTestBase -->
+      </class> <!-- EditTimeCustomerBug.CustBugTime62 -->
     </classes>
-  </test> <!-- NewManagerUserTestBase(failed) -->
+  </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Suite] -->
