@@ -96,7 +96,7 @@ public class LogintoLogoutTestBase extends TDWeb_005{
 	}
 	//Login with normal login from the document
 		@Parameters({"email","password"})
-		@Test (priority = 7, description="Login page",invocationCount = 100)
+		@Test (priority = 7, description="Login page")
 
 		public void credentials(String email, String password) throws InterruptedException, IOException
 		

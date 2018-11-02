@@ -32,6 +32,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
@@ -48,12 +49,12 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class TDWeb_004 extends TDWeb_001 {
+public class TDWeb_004  {
 	
 	public static Properties Config=null;
 	public static Properties LoginOR=null;
 	public static WebDriver tdweb = null;
-	public static String browserName = "Chrome";
+	public static String browserName = "Firefox";
 	public static String currentURL; 
 	public static String verifyLogIn;
 	public static Properties RegOR=null;
@@ -79,8 +80,10 @@ public class TDWeb_004 extends TDWeb_001 {
 	// Calling the application in various browser Chrome, Safari and Firefox. Note only chrome is implemented at the moment
 	public void TDRegistrationPage() throws InterruptedException, IOException
 	{
-		report = new ExtentReports(
-				"/Users/payalchoksey/Desktop/Time Doctor/TDAutomationScript_4/Reports/TDRegistrationReport01.html", true);
+		
+	
+		report = new ExtentReports(System.getProperty("user.dir")+"/src//test//resources//Reports//Registration//RegistrationReport.html", true);
+		
 		if(Config.getProperty("BrowserName").equals("Chrome"))
 		{
 			test = report.startTest("TD Registration Page - In Chrome", "Opening the Application");
@@ -89,12 +92,13 @@ public class TDWeb_004 extends TDWeb_001 {
 			tdweb.manage().window().fullscreen();
 			test.log(LogStatus.INFO, "Chrome Browser Launched Successfully");
 			UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
-			tdweb.get(Config.getProperty("RegistrationURL"));
+			tdweb.get(Config.getProperty("RegistrationURLStaging"));
 			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
 			tdweb.findElement(By.id("question1")).click();
-			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Do you manage other people?'])[1]/following::button[1]")).click();
-			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='The average time wasted is 2.09 hours daily'])[1]/following::button[1]")).click();
-			tdweb.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='To see exactly where your time goes each day.'])[1]/following::button[1]")).click();
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link1"))).click();
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link2"))).click();
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link3"))).click();
+			
 			test.log(LogStatus.INFO, "Time Doctor Application Opened in Chrome");
 			test.log(LogStatus.PASS, "Application opened sucessfully in Chrome");
 			report.endTest(test);
@@ -102,13 +106,43 @@ public class TDWeb_004 extends TDWeb_001 {
 		}
 		else if(Config.getProperty("BrowserName").equals("Firefox"))
 		{
-			System.out.println(" Firefox to be implemented");
+			System.setProperty("webdriver.gecko.driver","//Users//payalchoksey//Downloads//geckodriver3");
+			WebDriver tdweb = new FirefoxDriver();
+			tdweb.manage().window().fullscreen();
+		//	test.log(LogStatus.INFO, "Firefox Browser Launched Successfully");
+		//	UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
+			tdweb.get("https://www.timedoctorstaging.com");
+			//tdweb.get(Config.getProperty("RegistrationURLStaging"));
+			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
+			tdweb.findElement(By.id("question1")).click();
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link1"))).click();
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link2"))).click();
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link3"))).click();
+			
+		//	test.log(LogStatus.INFO, "Time Doctor Application Opened in Firefox");
+		//	test.log(LogStatus.PASS, "Application opened sucessfully in Firefox");
+		//	report.endTest(test);
+		//	report.flush(); 
+			
+			/*WebDriver driver1= new FirefoxDriver();
+			driver1.manage().window().fullscreen();
+			driver1.get("https://www.timedoctorstaging.com");*/
 		}
 		else if(Config.getProperty("BrowserName").equals("Safari"))
 		{
 
 			System.out.println(" Safari to be implemented");
 			
+		}
+		else if(Config.getProperty("BrowserName").equals("IE"))
+		{
+
+			System.out.println(" Safari to be implemented");
+			
+		}
+		else
+		{
+			System.out.println(" Browser not compatible");
 		}
 	}
 	
@@ -159,9 +193,11 @@ public class TDWeb_004 extends TDWeb_001 {
 			    tdweb.findElement(By.id(RegOR.getProperty("Password"))).sendKeys("payal123");
 			    test.log(LogStatus.INFO, "Entered the password as  :: " + "payal123");
 			    System.out.println("payal123");
-			    File newfile = new File("/Users/payalchoksey/git/payalchoksey/TDAutomationScript_4/src/test/resources/Source/data.txt");
+			    // This the data.txt file again saved in Structure 
+			    File newfile = new File(System.getProperty("user.dir")+"/src//test//resources//Source/data.txt");
 			    newfile.createNewFile();
-			    FileWriter write = new FileWriter ("/Users/payalchoksey/git/payalchoksey/TDAutomationScript_4/src/test/resources/Source/data.txt");
+			 // This the data.txt file again saved in Structure 
+			    FileWriter write = new FileWriter (System.getProperty("user.dir")+"/src//test//resources//Source/data.txt");
 			    BufferedWriter out = new BufferedWriter(write);
 			    out.write(localEmail+strDate+domainEmail);
 			    out.newLine();
@@ -175,7 +211,7 @@ public class TDWeb_004 extends TDWeb_001 {
 			    report.endTest(test);
 		   		report.flush();
 		   		currentURL=tdweb.getCurrentUrl();
-			    if (currentURL.equals("https://www.timedoctortest.com/"))
+			    if (currentURL.equals("https://www.timedoctorstaging.com/"))
 			    {
 			    	test = report.startTest("TD DashBoard URL", "Checking the Dashboard URL is opened correctly ");
 			    	assertEquals(tdweb.findElement(By.cssSelector(".tooltip-inner")).getText(), "A user with that email already exists!");
@@ -187,7 +223,7 @@ public class TDWeb_004 extends TDWeb_001 {
 					report.endTest(test);
 			   		report.flush();
 				}
-			    else if (currentURL.equals("https://login.timedoctortest.com/#/dashboard-company"))
+			    else if (currentURL.equals("https://login.timedoctorstaging.com/#/dashboard-company"))
 			    {
 			    	test = report.startTest("TD DashBoard URL", "Checking the Dashboard URL is opened correctly ");
 			    	test.log(LogStatus.PASS, "User has entered valid details");	
@@ -201,16 +237,17 @@ public class TDWeb_004 extends TDWeb_001 {
 					tdweb.findElement(By.cssSelector("#discount-popup-close")).click();
 					test.log(LogStatus.PASS, "Popup is sucessfully closed");
 					Thread.sleep(2000L);
-					tdweb.findElement(By.xpath("//*[@id='integration-setup-step-0']/div/div/div[3]/a/translate/span")).click();
+					
+					tdweb.findElement(By.xpath(RegOR.getProperty("Link4"))).click();
 					Thread.sleep(2000L);
-					tdweb.findElement(By.xpath("//*[@id='default-settings']/div/div/div[3]/input")).click();
+					tdweb.findElement(By.xpath(RegOR.getProperty("Link5"))).click();
 					Thread.sleep(2000L);
-					tdweb.findElement(By.xpath("//*[@id='default-phone']/div/div/div[3]/a/translate/span")).click();
+					tdweb.findElement(By.xpath(RegOR.getProperty("Link6"))).click();
 					Thread.sleep(5000L);
 					test.log(LogStatus.PASS, "All popup closed");
 					tdweb.findElement(By.xpath("//*[@id='mCSB_1_container']/ul[1]/li/div")).click();
 					UtilityRegistration.capturescreenshot(tdweb, "logout");
-					tdweb.findElement(By.xpath("//*[@id='company-list']/li/a")).click();
+					tdweb.findElement(By.xpath(RegOR.getProperty("Link7"))).click();
 					test.log(LogStatus.PASS, "User has sucessfully logged out from the application");
 			    	report.endTest(test);
 			   		report.flush();
@@ -251,7 +288,7 @@ public class TDWeb_004 extends TDWeb_001 {
 				    report.endTest(test);
 			   		report.flush();
 				    currentURL=tdweb.getCurrentUrl();
-				    if (currentURL.equals("https://www.timedoctortest.com/"))
+				    if (currentURL.equals("https://www.timedoctorteststaging.com/"))
 				    {
 				    	test = report.startTest("TD Registration Page", "Entering the details on Registration Page");
 					  	test.log(LogStatus.FAIL, "Invalid Registration information are entered");
@@ -260,7 +297,7 @@ public class TDWeb_004 extends TDWeb_001 {
 				    	report.endTest(test);
 				   		report.flush();
 				    }
-				    else if (currentURL.equals("https://login.timedoctortest.com/#/dashboard-company"))
+				    else if (currentURL.equals("https://login.timedoctorstaging.com/#/dashboard-company"))
 				    {
 				    	test = report.startTest("TD DashBoard URL", "Checking the Dashboard URL is opened correctly ");
 				    	test.log(LogStatus.PASS, "User has entered valid details");	
@@ -273,11 +310,11 @@ public class TDWeb_004 extends TDWeb_001 {
 						tdweb.findElement(By.cssSelector("#discount-popup-close")).click();
 						test.log(LogStatus.PASS, "Popup is sucessfully closed");
 						Thread.sleep(2000L);
-						tdweb.findElement(By.xpath("//*[@id='integration-setup-step-0']/div/div/div[3]/a/translate/span")).click();
+						tdweb.findElement(By.xpath(RegOR.getProperty("Link4"))).click();
 						Thread.sleep(2000L);
-						tdweb.findElement(By.xpath("//*[@id='default-settings']/div/div/div[3]/input")).click();
+						tdweb.findElement(By.xpath(RegOR.getProperty("Link5"))).click();
 						Thread.sleep(2000L);
-						tdweb.findElement(By.xpath("//*[@id='default-phone']/div/div/div[3]/a/translate/span")).click();
+						tdweb.findElement(By.xpath(RegOR.getProperty("Link6"))).click();
 						Thread.sleep(5000L);
 						tdweb.findElement(By.xpath("//*[@id='mCSB_1_container']/ul[1]/li/div")).click();
 						tdweb.findElement(By.xpath("//*[@id='company-list']/li/a")).click();
@@ -335,7 +372,7 @@ public class TDWeb_004 extends TDWeb_001 {
 			{
 				test = report.startTest("Time Doctor Login Page - Normal Login ", "Login");
 				test.log(LogStatus.INFO, "Login Page - Login"); 
-				 FileInputStream fstream = new FileInputStream("/Users/payalchoksey/git/payalchoksey/TDAutomationScript_4/src/test/resources/Source/data.txt");
+				 FileInputStream fstream = new FileInputStream(System.getProperty("user.dir")+"/src//test//resources//Source/data.txt");
 		         // Use DataInputStream to read binary NOT text.
 				 BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 		         String strLine;
