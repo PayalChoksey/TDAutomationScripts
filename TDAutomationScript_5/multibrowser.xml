@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+   
+  <test name="Login">
+  <parameter name = "browser" value = "Chrome" />
+ 
+ 
+  <classes>
+       <class name="TDWebTest.RedirectingPages.RedirectingPagesTestBase"/>
+     </classes>
+   </test>
+   
+   <test name="Login1">
+  <parameter name = "browser" value = "Firefox" />
+ 
+  <classes>
+       <class name="TDWebTest.RedirectingPages.RedirectingPagesTestBase"/>
+     </classes>
+   </test>
+  
+
+  
+</suite>
