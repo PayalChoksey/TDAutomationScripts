@@ -93,7 +93,7 @@ public class TDWeb_004Live  {
 			UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
 			tdweb.get(Config.getProperty("RegistrationURLLive"));
 			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
-			tdweb.findElement(By.id("question1")).click();
+			tdweb.findElement(By.xpath("//*[@id='continue']")).click();
 			tdweb.findElement(By.xpath(RegOR.getProperty("Link1"))).click();
 			tdweb.findElement(By.xpath(RegOR.getProperty("Link2"))).click();
 			tdweb.findElement(By.xpath(RegOR.getProperty("Link3"))).click();
@@ -290,13 +290,20 @@ public class TDWeb_004Live  {
 						test.log(LogStatus.PASS, "Popup is sucessfully closed");
 						Thread.sleep(2000L);
 						tdweb.findElement(By.xpath(RegOR.getProperty("Link4"))).click();
+						
 						Thread.sleep(2000L);
 						tdweb.findElement(By.xpath(RegOR.getProperty("Link5"))).click();
 						Thread.sleep(2000L);
 						tdweb.findElement(By.xpath(RegOR.getProperty("Link6"))).click();
+						//Thread.sleep(5000L);
+					
+					
+						tdweb.navigate().refresh();
+						test.log(LogStatus.PASS, "All popup closed");
 					
 						tdweb.findElement(By.xpath("//*[@id='mCSB_1_container']/ul[1]/li/div")).click();
-						tdweb.findElement(By.xpath("//*[@id='company-list']/li/a")).click();
+						UtilityRegistration.capturescreenshot(tdweb, "logout");
+						tdweb.findElement(By.xpath(RegOR.getProperty("Link7"))).click();
 						test.log(LogStatus.PASS, "User has sucessfully logged out from the application");
 				    	report.endTest(test);
 				   		report.flush();

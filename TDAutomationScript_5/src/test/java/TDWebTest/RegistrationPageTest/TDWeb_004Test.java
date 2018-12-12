@@ -23,7 +23,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -94,10 +96,11 @@ public class TDWeb_004Test  {
 			UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
 			tdweb.get(Config.getProperty("RegistrationURLTest"));
 			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
-			tdweb.findElement(By.id("question1")).click();
-			tdweb.findElement(By.xpath(RegOR.getProperty("Link1"))).click();
-			tdweb.findElement(By.xpath(RegOR.getProperty("Link2"))).click();
-			tdweb.findElement(By.xpath(RegOR.getProperty("Link3"))).click();
+		
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link1"))).click(); // 1st Yes
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link2"))).click(); // 2nd Yes
+			tdweb.findElement(By.xpath(RegOR.getProperty("Link3"))).click(); // 3rd Yes
+		//	tdweb.findElement(By.xpath("//button[@id='continue']")).click();
 			
 			test.log(LogStatus.INFO, "Time Doctor Application Opened in Chrome");
 			test.log(LogStatus.PASS, "Application opened sucessfully in Chrome");
@@ -106,27 +109,7 @@ public class TDWeb_004Test  {
 		}
 		else if(Config.getProperty("BrowserName").equals("Firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver","//Users//payalchoksey//Downloads//geckodriver3");
-			WebDriver tdweb = new FirefoxDriver();
-			tdweb.manage().window().fullscreen();
-		//	test.log(LogStatus.INFO, "Firefox Browser Launched Successfully");
-		//	UtilityRegistration.capturescreenshot(tdweb, "BrowserOpened");
-			tdweb.get("https://www.timedoctorstaging.com");
-			//tdweb.get(Config.getProperty("RegistrationURLStaging"));
-			UtilityRegistration.capturescreenshot(tdweb, "ApplicationOpened");
-			tdweb.findElement(By.id("question1")).click();
-			tdweb.findElement(By.xpath(RegOR.getProperty("Link1"))).click();
-			tdweb.findElement(By.xpath(RegOR.getProperty("Link2"))).click();
-			tdweb.findElement(By.xpath(RegOR.getProperty("Link3"))).click();
 			
-		//	test.log(LogStatus.INFO, "Time Doctor Application Opened in Firefox");
-		//	test.log(LogStatus.PASS, "Application opened sucessfully in Firefox");
-		//	report.endTest(test);
-		//	report.flush(); 
-			
-			/*WebDriver driver1= new FirefoxDriver();
-			driver1.manage().window().fullscreen();
-			driver1.get("https://www.timedoctorstaging.com");*/
 		}
 		else if(Config.getProperty("BrowserName").equals("Safari"))
 		{
@@ -177,7 +160,7 @@ public class TDWeb_004Test  {
 		  {	
 			  	test = report.startTest("TD Registration Page", "Entering the details on Registration Page");
 			  	test.log(LogStatus.INFO, "Testing for Test My Self Option");
-			  	tdweb.findElement(By.id(RegOR.getProperty("Self"))).click();
+			
 			  	tdweb.findElement(By.id(RegOR.getProperty("Continue"))).click();
 			  	tdweb.findElement(By.id(RegOR.getProperty("Name"))).clear();
 			  	tdweb.findElement(By.id(RegOR.getProperty("Name"))).sendKeys("PayalSelf");
@@ -234,17 +217,21 @@ public class TDWeb_004Test  {
 					String homepage = tdweb.getWindowHandle();
 					System.out.println(homepage);
 					UtilityRegistration.capturescreenshot(tdweb, "popuplogin");
-					tdweb.findElement(By.cssSelector("#discount-popup-close")).click();
-					test.log(LogStatus.PASS, "Popup is sucessfully closed");
-					Thread.sleep(2000L);
+				
 					
+					Thread.sleep(2000L);
 					tdweb.findElement(By.xpath(RegOR.getProperty("Link4"))).click();
+					
 					Thread.sleep(2000L);
 					tdweb.findElement(By.xpath(RegOR.getProperty("Link5"))).click();
 					Thread.sleep(2000L);
 					tdweb.findElement(By.xpath(RegOR.getProperty("Link6"))).click();
-					Thread.sleep(5000L);
+					//Thread.sleep(5000L);
+				
+				
+					tdweb.navigate().refresh();
 					test.log(LogStatus.PASS, "All popup closed");
+				
 					tdweb.findElement(By.xpath("//*[@id='mCSB_1_container']/ul[1]/li/div")).click();
 					UtilityRegistration.capturescreenshot(tdweb, "logout");
 					tdweb.findElement(By.xpath(RegOR.getProperty("Link7"))).click();

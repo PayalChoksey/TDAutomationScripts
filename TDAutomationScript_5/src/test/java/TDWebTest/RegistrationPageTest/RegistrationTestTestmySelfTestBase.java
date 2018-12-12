@@ -16,15 +16,11 @@ package TDWebTest.RegistrationPageTest;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.testng.annotations.AfterTest;
+
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
 
 public class RegistrationTestTestmySelfTestBase extends TDWeb_004Test{
