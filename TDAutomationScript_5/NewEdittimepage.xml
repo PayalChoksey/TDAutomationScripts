@@ -12,5 +12,14 @@
      </classes>
    </test>
    
+   <test name="Login1">
+  <parameter name = "browser" value = "Chrome" />
+  <parameter name = "email" value ="payal+52@staff.com"/>
+  <parameter name = "password" value = "payal123"/>
+ 
+  <classes>
+       <class name="TDWebTest.NewEditTimePage.NewEditTimePage"/>
+     </classes>
+   </test>
 
  </suite>
